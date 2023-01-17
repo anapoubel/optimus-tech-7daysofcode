@@ -1,0 +1,108 @@
+@import '../global/variaveis';
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $bg-principal;
+    padding: 2rem;
+    input, label {
+        display: none;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        margin-left: 3rem;
+        margin-right: auto;    
+        gap: 2rem;        
+        &-item {
+            text-decoration: none;
+            color: $cor-textos;
+            &:hover, &:focus {
+                border-bottom: 6px solid $cor-detalhes;
+                transition: 0.1s;
+            }
+        }
+    }
+    .cabecalho__membro {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        &-login {
+            border: none;
+            background: none;
+            color: $cor-textos;
+        }
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .cabecalho {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        &__menu {
+            margin: 3rem auto 0 auto;
+            grid-area: 2/1/2/3;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .cabecalho {
+        padding: 2rem 0.5rem;
+
+        label {
+            display: inline-block;
+            grid-area: 2/1/2/2;
+            margin-top: 0.7rem;
+            .menu-hamburguer__img {
+                display: block;
+                background-image: url(/img/Menu.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                padding: 0.4em 0.5em;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        &__menu {
+            display: none;
+            position: absolute;
+            top: 12%;
+            width: auto;
+            height: auto;
+            background-color: $cor-detalhes-3;
+            padding: 2em;
+        }
+
+        .menu-hamburguer:checked ~.cabecalho__menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .menu-hamburguer:checked ~.menu-hamburguer__label >.menu-hamburguer__img {
+            background-image: url(/img/MenuAberto.png);
+            background-color: $cor-detalhes;  
+        }
+    }
+}
+
+@media screen and (max-width: 413px) {
+    .cabecalho {
+        gap: 2em;
+        
+        &__logo {
+            grid-area: 1/1/2/3;
+            justify-self: center;
+        }
+        &__menu {
+            top: 15%;
+        }
+        &.cabecalho__membro {
+           grid-area: 2/2/2/3;
+        }
+    }
+}

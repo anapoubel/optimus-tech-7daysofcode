@@ -1,0 +1,65 @@
+@import '../global/variaveis';
+
+.vagas {
+    text-align: center;
+    padding: 6rem 0 3rem 0;
+    &__titulo {
+        display: inline-block;
+        font-size: 0.875rem;
+        padding: 0.6em 1em;
+        background-color: $cor-detalhes-2;
+        border-radius: 1em;
+        color: $cor-detalhes;
+        margin-bottom: 1.5em;
+    }
+    &__subtitulo {
+        font-weight: $peso-fonte-titulo;
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
+    &__texto {
+        font-size: 1.25rem;
+        font-weight: $peso-fonte-texto;
+        color: $cor-textos;
+    }
+    &__img {
+        margin: 4rem auto 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+    .vagas-area {
+        padding-top: 3rem;
+        &__titulo {
+            color: $cor-titulo-principal;
+            font-size: 1.25rem;
+            width: 63%;
+            margin: 0.5em auto 1em auto;
+            text-align: start;
+        }
+        &__card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            text-align: left;
+            width: 60%;
+            gap: 1em;
+            border: 1px solid rgba(234, 236, 240, 1);
+            border-radius: 0.5em;
+            padding: 1.2em;
+            margin: 1.2em auto;
+            h4 {
+                grid-column: span 2;
+                font-size: 1.125rem;
+                color: $cor-titulo-principal;
+            }
+            p {
+                color: $cor-textos;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .vagas-area__card {
+        width: 80%;
+    }
+}

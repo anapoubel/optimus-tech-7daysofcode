@@ -1,0 +1,41 @@
+@import '../global/variaveis';
+
+.depoimentos {
+   background-color: $cor-detalhes-2;
+   border-radius: 1rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 4em 2em;
+   &__titulo {
+      font-size: 0.875rem;
+      color: $cor-detalhes;
+      font-weight: $peso-fonte-titulo;
+      line-height: 1.2rem;
+   }
+   &__descricao {
+      font-size: 2.25rem;
+      color: $cor-titulo-principal;
+      text-align: center;
+      line-height: 2.5rem;
+      padding: 1rem;
+   }
+   &__img {
+      margin: 1rem;
+   }
+   &__nome {
+      color: $cor-titulo-principal;
+      padding: 0.8rem;
+   }
+   &__cargo {
+      color: $cor-textos;
+      font-size: 0.875rem;
+      font-weight: $peso-fonte-texto;
+   }
+}
+
+@media screen and (max-width: 413px) {
+   .depoimentos__titulo {
+      text-align: center;
+   }
+}

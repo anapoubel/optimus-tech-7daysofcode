@@ -1,0 +1,35 @@
+@import './variaveis';
+
+html, body, button {
+    font-family: $fonte-principal;
+    font-size: $tamanho-fonte-base;
+    font-weight: $peso-fonte-base;
+}
+
+.container {
+    margin: 0 6rem;
+}
+
+.botao {
+    background-color: $cor-detalhes;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    color: $bg-principal;
+    &:hover {
+        opacity: 70%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        margin: 0 3rem;
+    }
+}
+
+@media screen and (max-width: 769px) {
+
+    .container {
+        margin: 0 1rem;
+    }
+}
